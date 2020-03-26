@@ -29,9 +29,31 @@ disp(E);
 F=B*A;
 disp('F=');
 disp(F);
-G=(A.')*(B.');
+G=(B.')*(A.');
 disp('G=');
 disp(G)
 H=(A*B).';
 disp('H=');
-disp(H)
+disp(H);
+fprintf('Is E equal to  F:');
+if isequal(E,F)
+    fprintf('true\n');
+else
+    fprintf('false\n');
+end
+fprintf('Is G equal to  H:');
+if isequal(G,H)
+    fprintf('true\n');
+else
+    fprintf('false\n');
+end
+disp('inverse of E=');
+disp(inv(E));
+disp('inverse of F=');
+disp(inv(F));
+D=diag([2 1 -1 -2 -5]);
+disp('D=');
+disp(D);
+x=-4:4;
+y=0.6*(x.^2)-1;
+plot(x,y);
