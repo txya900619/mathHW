@@ -108,6 +108,13 @@ def inverse_matrix(matrix):
     return multiply_matrix(1/det, [[matrix[1][1], -matrix[0][1]], [-matrix[1][0], matrix[0][0]]])
 
 
+def print_matrix(matrix):
+    for row in matrix:
+        print(row)
+    print('\n')
+    pass
+
+
 def main():
     a = [[-1, 2, 0], [2, 0, 3]]
     b = [[2, 0, -1], [1, -2, 0]]
@@ -115,14 +122,23 @@ def main():
     e = [[2, -1], ["pi", "log2"], [-2, 6]]
     i = [[1, 0], [0, 1]]
     f = multiply_matrix(a, c)
-    print(plus_and_sub_matrix(a, multiply_matrix(2, b), "+"))
-    print(plus_and_sub_matrix(c, e, "-"))
-    print(transfer_matrix(a))
-    print(transfer_matrix(e))
-    print(f)
-    print(multiply_matrix(c, a))
-    print(inverse_matrix(f))
-    print(multiply_matrix(inverse_matrix(f), f))
+    print('A+2B')
+    print_matrix(plus_and_sub_matrix(a, multiply_matrix(2, b), "+"))
+    print('C-E')
+    print_matrix(plus_and_sub_matrix(c, e, "-"))
+    print('A^T')
+    print_matrix(transfer_matrix(a))
+    print('E^T')
+    print_matrix(transfer_matrix(e))
+    print('A*C')
+    print_matrix(f)
+    print('C*A')
+    print_matrix(multiply_matrix(c, a))
+    print('F^-1')
+    print_matrix(inverse_matrix(f))
+    print('(F^-1)*F')
+    print_matrix(multiply_matrix(inverse_matrix(f), f))
+    print('Is F*F^-1=I?')
     print(i == multiply_matrix(inverse_matrix(f), f))
 
 
